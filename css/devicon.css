@@ -1,0 +1,33 @@
+@import url('styles.css');
+
+.dev-icons {
+    padding-left: 0;
+    list-style: none;
+    font-size: 3rem;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.software-skill-inline {
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
+.software-skill-inline svg {
+    color: var(--warna_sub);
+}
+
+.software-skill-inline>svg:hover {
+    color: var(--bs-primary);
+}
+
+.software-skill-inline>p {
+    color: var(--warna_sub);
+    font-size: 10px;
+}
+
+.software-skill-inline>svg:hover~p {
+    color: var(--bs-primary);
+}

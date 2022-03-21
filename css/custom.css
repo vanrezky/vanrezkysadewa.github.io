@@ -1,0 +1,13 @@
+.social-icon {
+    display: block;
+  }
+  
+  .subheading {
+    font-size: 1.1rem;
+  }
+  
+  @media (min-width: 992px) {
+    .subheading {
+        font-size: 1.2rem;
+    }
+  }
