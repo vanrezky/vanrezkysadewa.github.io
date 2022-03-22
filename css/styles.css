@@ -11393,7 +11393,7 @@ html {
   font-size: 1.1rem;
 }
 .masthead .masthead-avatar {
-  width: 16rem;
+  max-width: 18rem;
 }
 
 @media (min-width: 992px) {
@@ -11407,6 +11407,10 @@ html {
   }
   .masthead .masthead-subheading {
     font-size: 1.2rem;
+  }
+
+  .masthead .masthead-avatar {
+    max-width: 25rem;
   }
 }
 .portfolio .portfolio-item {
