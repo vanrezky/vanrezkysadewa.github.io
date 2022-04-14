@@ -19,6 +19,7 @@
     <link href="css/wave.css?v1" rel="stylesheet" />
     <link href="css/custom.css?v1" rel="stylesheet" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 
@@ -54,7 +55,7 @@
     <header class="masthead">
         <div class="container d-flex flex-column align-items-center">
             <div class="row">
-                <div class="col-md-6 text-md-start text-center">
+                <div class="col-md-6 text-md-start text-center" data-aos="fade-up" data-aos-delay="1200">
                     <h1 class="masthead-heading mb-3">Hi, I'm Van
                         <div class="wave-emoji">
                             <img src="https://twemoji.maxcdn.com/2/72x72/1f44b.png" alt="👋" draggable="false">
@@ -97,15 +98,19 @@
     <section class="page-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-lg-6"></div>
-                <div class="col-md-6 text-md-start text-center">
+                <div class="col-md-6 text-center align-self-center" data-aos="fade-left" data-aos-duration="700">
+                    <img class="max-25-rem" draggable="false" src="assets/img/programming.gif" alt="me" />
+                    <!-- Masthead Avatar Image-->
+                </div>
+                <div class="col-md-6 text-md-start text-center" data-aos="fade-right" data-aos-duration="700">
                     <h2 class="page-section-heading mb-5">What I do</h2>
                     <p class="subheading font-weight-light text-uppercase mb-2">
                         CRAZY WEB DEV WHO WANTS TO EXPLORE THIER APP
                     </p>
                     <div class="software-skills-main-div">
                         <ul class="dev-icons">
-                            <li class="software-skill-inline" name="html-5"><i class="fab fa-html5"></i>
+                            <li class="software-skill-inline" name="html-5" data-aos="flip-left" data-aos-delay="400"><i
+                                    class="fab fa-html5"></i>
                                 <p>html-5</p>
                             </li>
                             <li class="software-skill-inline" name="css3"><i class="fab fa-css3-alt"></i>
@@ -422,38 +427,42 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        $(document).ready(function () {
-
+        // onload
+        window.onload = function () {
+            window.scrollTo(0, 0); //scroll to top
+        }
+        // when document loaded
+        window.addEventListener('DOMContentLoaded', event => {
             setTimeout(function () {
-                $('body').addClass('loaded');
+                //hide loader
+                document.querySelector('body').classList.add('loaded');
+
+                // set aos
+                AOS.init({ once: true });
             }, 1000);
-        })
-
+        });
     </script>
+    <script>
+        const skills = document.querySelectorAll('ul.dev-icons li');
+        skills.forEach((skill, i) => {
+            skill.dataset.aos = 'flip-left';
+            skill.dataset.aosDelay = i * 200;
+            skill.dataset.aosDuration = 1000;
+        });
 
-    <!-- <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyAeXZezdaFf2TQ1QvZj01Cm_awZte-r9uM",
-            authDomain: "portfolio-335d5.firebaseapp.com",
-            projectId: "portfolio-335d5",
-            storageBucket: "portfolio-335d5.appspot.com",
-            messagingSenderId: "337910077359",
-            appId: "1:337910077359:web:571c87890c3fe9c6c0815a"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-    </script> -->
+        const porfolios = document.querySelectorAll('section#portfolio .portfolio-item');
+        porfolios.forEach((portfolio, i) => {
+            portfolio.dataset.aos = 'fade-up';
+            portfolio.dataset.aosDelay = i * 500;
+            portfolio.dataset.aosDuration = 1000;
+        });
+    </script>
 </body>
 
 </html>
